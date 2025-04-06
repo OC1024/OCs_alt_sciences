@@ -1,0 +1,13 @@
+{
+  "name": "OCs_alt_sciences",
+  "version": "0.1.0",
+  "title": "OCs Alternative Science Production",
+  "author": "OC1024",
+  "description": "Adds the alternative science pack production with research and optional productivity techs.",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0",
+    "space-age",
+    "OCs_base_assets"
+  ]
+}

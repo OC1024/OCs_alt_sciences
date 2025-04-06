@@ -1,0 +1,23 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2025-04-06
+  Major Features:
+    - Made this as a standalone mod and changed dependencies accordingly.
+  Minor Features:
+    - Added a non-lava recipe for military science to be useful outside of Vulcanus.
+    - Added productivity researches for all science packs. 
+    - Productivity tech for planetary science packs (space, metallurgy, agriculture, electromagnetic; cryogenic, promethium) are optional with userdefined max level (or infinite).
+    - Added a research speed tech with promethium science, parallel to the lab prod tech. (not yet implemented)
+  Changes:
+    - Alternative science pack recipes are now core feature, not optional anymore.
+    - Moved chemical and space science packs from cryogenetic plant to biochamber.
+    - Moved production science pack from foundry to em-plant.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 2025-01-12
+  Major Features:
+    - Initial idea.
+    - English and German localisation.
+    - Optionally alternative science pack recipes: casting automation, logistics and production science packs in the foundry; chemical space, and cryogenic science packs in the cryogenetic plant; EM science pack in the EM plant.
+  Minor Features:
+    - Added optional dependency of the mod "foundry expanded" by beezelo & "EM-plant expanded", which both fit perfectly in the theme. No change was done to the mod and this is a modpack.

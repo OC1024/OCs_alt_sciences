@@ -1,0 +1,4 @@
+-- require("prototypes/entity-update")
+-- require("prototypes/item-update")
+-- require("prototypes/recipe-update")
+-- require("prototypes/technology-update")
