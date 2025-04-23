@@ -1,11 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
-Date: 2025-01-12
+Date: 2025-04-19
+  Minor Features:
+    - "New" thumbnail. 
   Other:
-    - dummy version
+    - Updated dependency of my base mod. (pending/to-do)
+    - German localisation now has different word order.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
-Date: 2025-01-12
+Date: 2025-04-06
   Bugfixes:
     - fixed typo "grapics" to "graphics" in folder.
 ---------------------------------------------------------------------------------------------------
