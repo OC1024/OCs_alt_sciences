@@ -82,7 +82,7 @@ data:extend({
   { -- cryogenic-plant sciences late-game sciences
     type = "technology",
     name = "cryoplant-science-packs-tech",
-    icon = "__OCs_alt_sciences__/graphics/technology/cryo-science-packs2.png", -- not yet updated
+    icon = "__OCs_alt_sciences__/graphics/technology/cryo-science-packs2.png",
     icon_size = 256, icon_mipmaps = 4,
     prerequisites = {"emp-science-packs-tech","foundry-science-packs-tech","biochamber-science-packs-tech","promethium-science-pack"}, --some are indirect prereqs (cryogenic)
     unit = {

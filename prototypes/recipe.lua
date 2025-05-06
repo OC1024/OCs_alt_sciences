@@ -101,7 +101,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
         icon_mipmaps = 4,
       },
       {
-        icon = "__OCs_alt_sciences__/graphics/icons/overlayer-recipe-lava-droplet.png",
+        icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
         icon_size = 64,
         icon_mipmaps = 4,
       }
@@ -234,7 +234,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
         icon_mipmaps = 4,
       },
       {
-        icon = "__OCs_alt_sciences__/graphics/icons/overlayer-recipe-em-plant.png",
+        icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-em-plant.png",
         icon_size = 64,
         icon_mipmaps = 4,
       }

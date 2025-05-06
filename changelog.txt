@@ -2,9 +2,12 @@
 Version: 0.1.2
 Date: 2025-04-19
   Minor Features:
-    - "New" thumbnail. 
+    - "New" thumbnail.
+    - Deleting unused graphics, reducing mod size.
+  Bugfixes:
+    - Fixed wrong graphics path for some of the science packs.
   Other:
-    - Updated dependency of my base mod. (pending/to-do)
+    - Updated dependency of my base mod.
     - German localisation now has different word order.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
