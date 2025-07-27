@@ -5,7 +5,7 @@ data:extend({
     name = "foundry-science-packs-tech",
     icon = "__OCs_alt_sciences__/graphics/technology/casting-science-packs2.png",
     icon_size = 256, icon_mipmaps = 4,
-    prerequisites = {"metallurgic-science-pack","space-science-pack","production-science-pack","military-science-pack"}, --some are indirect prereqs (red, green, blue))
+    prerequisites = {"metallurgic-science-pack","space-science-pack","production-science-pack","utility-science-pack","military-science-pack"}, --some are indirect prereqs (red, green, blue))
     unit = {
       ingredients = { -- cast-able science packs are used twice as the rest
         {"automation-science-pack", 2},
