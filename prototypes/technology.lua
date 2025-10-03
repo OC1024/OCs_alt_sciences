@@ -108,6 +108,13 @@ data:extend({
     },
   },
 })
+-- add temporarely automated recipes to the techs
+local mapping = {
+  ["pulse-production-science-pack"] = {"emp-science-packs-tech"},
+  ["pulse-utility-science-pack"] = {"emp-science-packs-tech"},
+  ["bio-chemical-science-pack"] = {"biochamber-science-packs-tech"},
+  ["bio-space-science-pack"] = {"biochamber-science-packs-tech"},
+}
 
 -- Determine max level for productivity tech and creating the techs
 local max_level_setting = settings.startup["science-productivity-max-level"].value
@@ -121,6 +128,10 @@ else
       max_level = max_level_setting
   end
 
+  ---create techs for the progression phases and adds it to the game data
+  ---@param name string
+  ---@param prereq string
+  ---@param recipes table<string> -- list of recipes which gets a bonus
   local function create_prod_bonus_tech(name, prereq, recipes)
     -- Get icon details from the prerequisite tech
     local base_icon = data.raw["technology"][prereq].icon
@@ -152,32 +163,33 @@ else
       end
     end
 
-    return {
-      type = "technology",
-      name = name,
-      icons = util.technology_icon_constant_recipe_productivity(base_icon), --reusing the vanilla prod icon as overlayer
-      prerequisites = {prereq},
-      effects = productivity_effects, 
-      unit = {
-        ingredients = data.raw["technology"][prereq].unit.ingredients,
-        count_formula = "1000*2^(L/2)", -- Exponential scaling
-        time = data.raw["technology"][prereq].unit.time
-      },
-      upgrade = true,
-      max_level = max_level,
-      -- order = "z-" .. name
-    }
+    data:extend({
+      {
+        type = "technology",
+        name = name,
+        icons = util.technology_icon_constant_recipe_productivity(base_icon), --reusing the vanilla prod icon as overlayer
+        prerequisites = {prereq},
+        effects = productivity_effects, 
+        unit = {
+          ingredients = data.raw["technology"][prereq].unit.ingredients,
+          count_formula = "1000*2^(L/2)", -- Exponential scaling
+          time = data.raw["technology"][prereq].unit.time
+        },
+        upgrade = true,
+        max_level = max_level,
+        -- order = "z-" .. name
+      }
+    })
   end
 
   -- Create separate techs for the alternative recipes
-  data:extend({
-    create_prod_bonus_tech("foundry-science-packs-productivity-tech", "foundry-science-packs-tech", {"metallurgic-science-pack"}),
-    create_prod_bonus_tech("emp-science-packs-productivity-tech", "emp-science-packs-tech", {"electromagnetic-science-pack"}),
-    create_prod_bonus_tech("biochamber-science-packs-productivity-tech", "biochamber-science-packs-tech", {"agricultural-science-pack"}),
-    create_prod_bonus_tech("cryoplant-science-packs-productivity-tech", "cryoplant-science-packs-tech", {"cryogenic-science-pack","promethium-science-pack"}),
-  })
+  create_prod_bonus_tech("foundry-science-packs-productivity-tech", "foundry-science-packs-tech", {"metallurgic-science-pack"})
+  create_prod_bonus_tech("emp-science-packs-productivity-tech", "emp-science-packs-tech", {"electromagnetic-science-pack"})
+  create_prod_bonus_tech("biochamber-science-packs-productivity-tech", "biochamber-science-packs-tech", {"agricultural-science-pack"})
+  create_prod_bonus_tech("cryoplant-science-packs-productivity-tech", "cryoplant-science-packs-tech", {"cryogenic-science-pack","promethium-science-pack"})
 
-  -- Overwrite cryoplant tech cost with research trigger
+
+  -- Overwrite my cryoplant tech cost with research trigger
   local cryo_tech = data.raw.technology["cryoplant-science-packs-tech"]
   if cryo_tech then
     cryo_tech.unit = nil -- Clear old unit definition

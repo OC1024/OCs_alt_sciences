@@ -263,3 +263,15 @@ data:extend({ -- foundry/emp/biochamber/cryo science
     allow_productivity = true,
   },
 })
+
+local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
+local casting_dict = {
+  ["automation-science-pack"] = "metallurgy",
+  ["logistic-science-pack"] = "metallurgy",
+  ["military-science-pack"] = "metallurgy", -- I'm wondering what the result is
+  ["chemical-science-pack"] = "organic",
+  ["space-science-pack"] = "organic",
+  ["production-science-pack"] = "electromagnetics",
+  ["utility-science-pack"] = "electromagnetics",
+}
+generator_api.batch_generator(casting_dict)

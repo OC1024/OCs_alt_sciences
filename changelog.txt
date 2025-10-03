@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2025-10-03
+  Major Features:
+    - Using the generator, recipes will be automatically changed for aai or krasto (maybe?) (experimental)
+---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 2025-07-27
   Changes:

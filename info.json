@@ -1,6 +1,6 @@
 {
   "name": "OCs_alt_sciences",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "title": "OCs Alternative Science Production",
   "author": "OC1024",
   "description": "Adds the alternative science pack production with research and optional productivity techs.",
@@ -8,6 +8,8 @@
   "dependencies": [
     "base >= 2.0",
     "space-age",
-    "OCs_base_assets >= 0.1.1"
+    "OCs_base_assets >= 0.3.0",
+    "(?) aai-industry >= 0.6.0",
+    "(?) Krastorio2-spaced-out >= 1.4.0"
   ]
 }
