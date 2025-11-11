@@ -59,7 +59,7 @@ data:extend({
   name = "biochamber-science-packs-tech",
   icon = "__OCs_alt_sciences__/graphics/technology/biochamber-science-packs.png",
   icon_size = 256, icon_mipmaps = 4,
-  prerequisites = {"agricultural-science-pack","space-science-pack","chemical-science-pack",}, --some are indirect prereqs (biochamber, chemical-science-pack))
+  prerequisites = {"agricultural-science-pack","space-science-pack","chemical-science-pack",}, --some are indirect prereqs (biochamber))
   unit = {
     ingredients = { -- biochamber-able science packs are used twice as the rest
       {"automation-science-pack", 1},
@@ -84,7 +84,7 @@ data:extend({
     name = "cryoplant-science-packs-tech",
     icon = "__OCs_alt_sciences__/graphics/technology/cryo-science-packs2.png",
     icon_size = 256, icon_mipmaps = 4,
-    prerequisites = {"emp-science-packs-tech","foundry-science-packs-tech","biochamber-science-packs-tech","promethium-science-pack"}, --some are indirect prereqs (cryogenic)
+    prerequisites = {"emp-science-packs-tech","foundry-science-packs-tech","biochamber-science-packs-tech","cryogenic-science-pack","promethium-science-pack"},
     unit = {
       ingredients = { -- cryo-able science packs are used twice as the rest
         {"automation-science-pack", 1},

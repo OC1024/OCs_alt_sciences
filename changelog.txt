@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.4
+Date: 2025-11-11
+  Changes:
+    - Added Cryogenic science pack to the prerequirements for cryoplant-science-packs-tech explicitly. It was indirectly a prerequirement before.
+  Localisation:
+    - Unify EN localisation with my other mods
+    - Added missing EN localisation for a mod setting.
+    - Elaborated EN, DE mod setting such that it is clearer what it does.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 2025-07-27
   Changes:
