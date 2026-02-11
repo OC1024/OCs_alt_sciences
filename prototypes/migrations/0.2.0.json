@@ -1,0 +1,8 @@
+{
+    "recipe": [
+        ["biochamber-chemical-science-pack", "bio-chemical-science-pack"],
+        ["biocamber-space-science-pack","bio-space-science-pack"],
+        ["em-production-science-pack","pulse-production-science-pack"],
+        ["em-utility-science-pack","pulse-utility-science-pack"]
+    ]
+}

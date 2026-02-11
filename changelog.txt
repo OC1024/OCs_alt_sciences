@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2026-02-10-wip
+  Major Features:
+    - Complete Rework of recipes. Legacy option is available.
+  Compatibility:
+    - [K2SO] is incompatible for now because of design choise. This mods tries to simplify/unify processes, while K2 wants to introduce more steps.
+    - Basic [AAI Industry] support
+  Changes:
+    - Updated dependency of [OCs Base Assets] to >0.3.3 as helper functions were updated.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 2025-11-11
   Changes:

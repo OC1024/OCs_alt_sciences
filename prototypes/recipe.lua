@@ -1,3 +1,4 @@
+if settings.startup["legacy-recipes"].value then
 data:extend({ -- foundry/emp/biochamber/cryo science
   { -- automation science
     type = "recipe",
@@ -122,7 +123,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   },
   { -- chemical science (biochamber/new)
     type = "recipe",
-    name = "biochamber-chemical-science-pack",
+    name = "bio-chemical-science-pack",
     icons =
     {
       {
@@ -152,7 +153,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   },
   { -- space science (biochamber/new)
     type = "recipe",
-    name = "biochamber-space-science-pack",
+    name = "bio-space-science-pack",
     icons =
     {
       {
@@ -190,7 +191,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   },
   { -- production science EM (new)
     type = "recipe",
-    name = "em-production-science-pack",
+    name = "pulse-production-science-pack",
     icons =
     {
       {
@@ -225,7 +226,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   },
   { -- utility science EM
     type = "recipe",
-    name = "em-utility-science-pack",
+    name = "pulse-utility-science-pack",
     icons =
     {
       {
@@ -263,3 +264,18 @@ data:extend({ -- foundry/emp/biochamber/cryo science
     allow_productivity = true,
   },
 })
+else
+  local alt_recipe_dict = {
+    ["automation-science-pack"] = "metallurgy",
+    ["logistic-science-pack"]  ="metallurgy",
+    ["military-science-pack"] = "metallurgy",
+    ["chemical-science-pack"] = "organic",
+    ["space-science-pack"] = "organic",
+    ["production-science-pack"] = "electromagnetics",
+    ["utility-science-pack"] = "electromagnetics",
+  }
+  -- generator_api usage
+  local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
+
+  generator_api.batch_generator(alt_recipe_dict)
+end

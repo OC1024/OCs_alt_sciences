@@ -1,6 +1,6 @@
 -- alternative recipes for basic science packs in foundry, em-plant and biochamber
 data:extend({
-   { -- foundry sciences early-tech sciences
+  { -- foundry sciences early-tech sciences
     type = "technology",
     name = "foundry-science-packs-tech",
     icon = "__OCs_alt_sciences__/graphics/technology/casting-science-packs2.png",
@@ -19,17 +19,15 @@ data:extend({
       },
       time = 60,
       count = 500
-      },
-      effects = {
-        {type = "unlock-recipe", recipe = "casting-automation-science-pack"},
-        {type = "unlock-recipe", recipe = "casting-logistic-science-pack"},
-        {type = "unlock-recipe", recipe = "casting-military-science-pack"},
-        {type = "unlock-recipe", recipe = "lava-to-military-science-pack"}, -- Vulcanus/old version
-        -- {type = "unlock-recipe", recipe = "casting-production-science-pack"},
-        -- {type = "unlock-recipe", recipe = "casting-rail"}, -- needed to make some sense for the production science
-      },
+    },
+    effects = {
+      {type = "unlock-recipe", recipe = "casting-automation-science-pack"},
+      {type = "unlock-recipe", recipe = "casting-logistic-science-pack"},
+      {type = "unlock-recipe", recipe = "casting-military-science-pack"},
+      -- {type = "unlock-recipe", recipe = "lava-to-military-science-pack"}, -- Vulcanus/old version
+    },
   },
-  { -- em-plant sciences mid-tech sciences
+  { -- em-plant sciences mid-tech sciences (pulse)
   type = "technology",
   name = "emp-science-packs-tech",
   icon = "__OCs_alt_sciences__/graphics/technology/em-science-packs3.png",
@@ -49,12 +47,12 @@ data:extend({
     count = 500
     },
     effects = {
-      {type = "unlock-recipe", recipe = "em-utility-science-pack"},
-      {type = "unlock-recipe", recipe = "em-production-science-pack"},
+      {type = "unlock-recipe", recipe = "pulse-utility-science-pack"},
+      {type = "unlock-recipe", recipe = "pulse-production-science-pack"},
       -- {type = "unlock-recipe", recipe = "em-electromagnetic-science-pack"}, -- already there
     },
   },
-  { -- biochamber sciences early-midtech sciences
+  { -- biochamber sciences early-midtech sciences (bio)
   type = "technology",
   name = "biochamber-science-packs-tech",
   icon = "__OCs_alt_sciences__/graphics/technology/biochamber-science-packs.png",
@@ -74,8 +72,8 @@ data:extend({
     count = 500
     },
     effects = {
-      {type = "unlock-recipe", recipe = "biochamber-chemical-science-pack"},
-      {type = "unlock-recipe", recipe = "biochamber-space-science-pack"},
+      {type = "unlock-recipe", recipe = "bio-chemical-science-pack"},
+      {type = "unlock-recipe", recipe = "bio-space-science-pack"},
       -- {type = "unlock-recipe", recipe = "biochamber-agricultural-science-pack"}, -- already there
     },
   },
@@ -108,6 +106,7 @@ data:extend({
     },
   },
 })
+add_recipe_unlocks( { ["lava-to-military-science-pack"] = {"foundry-scinece-packs-tech"}}) -- gently adds a recipe and doesn't break if recipe is missing
 
 -- Determine max level for productivity tech and creating the techs
 local max_level_setting = settings.startup["science-productivity-max-level"].value
