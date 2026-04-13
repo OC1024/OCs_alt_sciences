@@ -1,3 +1,5 @@
+local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+
 -- alternative recipes for basic science packs in foundry, em-plant and biochamber
 data:extend({
   { -- foundry sciences early-tech sciences
@@ -106,7 +108,7 @@ data:extend({
     },
   },
 })
-add_recipe_unlocks( { ["lava-to-military-science-pack"] = {"foundry-scinece-packs-tech"}}) -- gently adds a recipe and doesn't break if recipe is missing
+oc_helper.add_recipe_unlocks( { ["lava-to-military-science-pack"] = {"foundry-science-packs-tech"}}) -- gently adds a recipe and doesn't break if recipe is missing
 
 -- Determine max level for productivity tech and creating the techs
 local max_level_setting = settings.startup["science-productivity-max-level"].value

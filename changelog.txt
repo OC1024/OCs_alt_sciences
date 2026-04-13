@@ -1,13 +1,18 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
-Date: 2026-02-10-wip
+Date: 2026-04-11-wip
   Major Features:
-    - Complete Rework of recipes. Legacy option is available.
+    - Experimental Complete Rework of recipes. Legacy option is active on default.
   Compatibility:
-    - [K2SO] is incompatible for now because of design choise. This mods tries to simplify/unify processes, while K2 wants to introduce more steps.
-    - Basic [AAI Industry] support
+    - [K2], [K2SO] is incompatible for now because of design choise. This mods tries to simplify/unify processes, while K2 wants to introduce more steps.
+      As alternative, I'll soon provide another mod named [OCs Nauvis Science Port], which does not add alternative recipes, but only allows them in the non-Nauvis-buldings.
+    - Basic [AAI Industry] support.
+    - Added compatibility with [Science tab] (unfinished).
   Changes:
-    - Updated dependency of [OCs Base Assets] to >0.3.3 as helper functions were updated.
+    - Updated dependency of [OCs Base Assets] to >=0.3.5 as helper functions were updated.
+    - Set this mod properly to be a [Space Age] mod, which it was from the start.
+  Bugfixes:
+    - Lava version of military science pack is now correctly unlocked.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 2025-11-11

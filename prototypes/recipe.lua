@@ -3,8 +3,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   { -- automation science
     type = "recipe",
     name = "casting-automation-science-pack",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/icons/automation-science-pack.png",
         icon_size = 64,
@@ -32,8 +31,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   { -- logistic science
     type = "recipe",
     name = "casting-logistic-science-pack",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/icons/logistic-science-pack.png",
         icon_size = 64,
@@ -61,8 +59,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   { -- military science (molten metal version)
     type = "recipe",
     name = "casting-military-science-pack",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/icons/military-science-pack.png",
         icon_size = 64,
@@ -94,8 +91,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   { -- military science (Vulcanus/old version)
     type = "recipe",
     name = "lava-to-military-science-pack",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/icons/military-science-pack.png",
         icon_size = 64,
@@ -124,8 +120,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   { -- chemical science (biochamber/new)
     type = "recipe",
     name = "bio-chemical-science-pack",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/icons/chemical-science-pack.png",
         icon_size = 64,
@@ -154,8 +149,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   { -- space science (biochamber/new)
     type = "recipe",
     name = "bio-space-science-pack",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/icons/space-science-pack.png",
         icon_size = 64,
@@ -179,8 +173,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
     results = {
       {type = "item", name = "space-science-pack", amount = 5}
     },
-    surface_conditions =
-    {
+    surface_conditions =  {
       {
         property = "gravity",
         min = 0,
@@ -192,8 +185,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   { -- production science EM (new)
     type = "recipe",
     name = "pulse-production-science-pack",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/icons/production-science-pack.png",
         icon_size = 64,
@@ -227,8 +219,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   { -- utility science EM
     type = "recipe",
     name = "pulse-utility-science-pack",
-    icons =
-    {
+    icons = {
       {
         icon = "__base__/graphics/icons/utility-science-pack.png",
         icon_size = 64,
@@ -278,4 +269,21 @@ else
   local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 
   generator_api.batch_generator(alt_recipe_dict)
+end
+
+if mods["science-tab"] then
+  local mapping = {
+    ["casting-automation-science-pack"] = "automation",
+    ["casting-logistic-science-pack"] = "logistic",
+    ["casting-military-science-pack"] = "military",
+    ["lava-to-military-science-pack"] = "military",
+    ["bio-chemical-science-pack"] = "chemical",
+    ["bio-space-science-pack"] = "space",
+    ["pulse-production-science-pack"] = "production",
+    ["pulse-utility-science-pack"] = "utility",
+  }
+  for recipe, _ in pairs(mapping) do
+    local recipe_table = data.raw.recipe[recipe]
+    recipe_table.group = "science"
+  end
 end
