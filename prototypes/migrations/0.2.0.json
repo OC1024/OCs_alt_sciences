@@ -3,6 +3,11 @@
         ["biochamber-chemical-science-pack", "bio-chemical-science-pack"],
         ["biocamber-space-science-pack","bio-space-science-pack"],
         ["em-production-science-pack","pulse-production-science-pack"],
-        ["em-utility-science-pack","pulse-utility-science-pack"]
+        ["em-utility-science-pack","pulse-utility-science-pack"],
+        ["casting-automation-science-pack", "oc-casting-automation-science-pack"],
+        ["casting-logistic-science-pack", "oc-casting-logistic-science-pack"],
+        ["casting-military-science-pack", "oc-casting-military-science-pack"],
+        ["bio-chemical-science-pack", "oc-bio-chemical-science-pack"],
+        ["bio-space-science-pack", "oc-bio-space-science-pack"]
     ]
 }

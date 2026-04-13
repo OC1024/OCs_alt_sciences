@@ -3,9 +3,8 @@ if settings.startup["K2-custom-recipes"].value then
   data:extend({
     { -- automation science
       type = "recipe",
-      name = "casting-automation-science-pack",
-      icons =
-      {
+      name = "oc-casting-automation-science-pack",
+      icons = {
         {
           filename = "__Krastorio2Assets__/icons/cards/automation-tech-card.png",
           size = 64,
@@ -40,9 +39,8 @@ if settings.startup["K2-custom-recipes"].value then
     },
     { -- logistic science
       type = "recipe",
-      name = "casting-logistic-science-pack",
-      icons =
-      {
+      name = "oc-casting-logistic-science-pack",
+      icons = {
         {
           filename = "__Krastorio2Assets__/icons/cards/logistic-tech-card.png",
           size = 64,
@@ -79,9 +77,8 @@ if settings.startup["K2-custom-recipes"].value then
     },
     { -- military science
       type = "recipe",
-      name = "casting-military-science-pack",
-      icons =
-      {
+      name = "oc-casting-military-science-pack",
+      icons = {
         {
           filename = "__Krastorio2Assets__/icons/cards/military-tech-card.png",
           size = 64,
@@ -121,7 +118,7 @@ if settings.startup["K2-custom-recipes"].value then
     --[[
     { -- production science
       type = "recipe",
-      name = "pulse-production-science-pack",
+      name = "oc-pulse-production-science-pack",
       icons =
       {
         {

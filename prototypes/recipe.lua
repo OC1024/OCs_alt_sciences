@@ -1,8 +1,24 @@
-if settings.startup["legacy-recipes"].value then
+local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
+
+if settings.startup["experimental-recipes"].value then
+  local alt_recipe_dict = {
+    ["automation-science-pack"] = "metallurgy",
+    ["logistic-science-pack"]  ="metallurgy",
+    ["military-science-pack"] = "metallurgy",
+    ["chemical-science-pack"] = "organic",
+    ["space-science-pack"] = "organic",
+    ["production-science-pack"] = "electromagnetics",
+    ["utility-science-pack"] = "electromagnetics",
+  }
+  -- generator_api usage
+  local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
+
+  generator_api.batch_generator(alt_recipe_dict)
+else
 data:extend({ -- foundry/emp/biochamber/cryo science
   { -- automation science
     type = "recipe",
-    name = "casting-automation-science-pack",
+    name = "oc-casting-automation-science-pack",
     icons = {
       {
         icon = "__base__/graphics/icons/automation-science-pack.png",
@@ -30,7 +46,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   },
   { -- logistic science
     type = "recipe",
-    name = "casting-logistic-science-pack",
+    name = "oc-casting-logistic-science-pack",
     icons = {
       {
         icon = "__base__/graphics/icons/logistic-science-pack.png",
@@ -58,7 +74,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   },
   { -- military science (molten metal version)
     type = "recipe",
-    name = "casting-military-science-pack",
+    name = "oc-casting-military-science-pack",
     icons = {
       {
         icon = "__base__/graphics/icons/military-science-pack.png",
@@ -88,9 +104,9 @@ data:extend({ -- foundry/emp/biochamber/cryo science
     },
     allow_productivity = true,
   },
-  { -- military science (Vulcanus/old version)
+  { -- military science (Vulcanus/lava version)
     type = "recipe",
-    name = "lava-to-military-science-pack",
+    name = "oc-lava-to-military-science-pack",
     icons = {
       {
         icon = "__base__/graphics/icons/military-science-pack.png",
@@ -119,7 +135,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   },
   { -- chemical science (biochamber/new)
     type = "recipe",
-    name = "bio-chemical-science-pack",
+    name = "oc-bio-chemical-science-pack",
     icons = {
       {
         icon = "__base__/graphics/icons/chemical-science-pack.png",
@@ -148,7 +164,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   },
   { -- space science (biochamber/new)
     type = "recipe",
-    name = "bio-space-science-pack",
+    name = "oc-bio-space-science-pack",
     icons = {
       {
         icon = "__base__/graphics/icons/space-science-pack.png",
@@ -184,7 +200,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   },
   { -- production science EM (new)
     type = "recipe",
-    name = "pulse-production-science-pack",
+    name = "oc-pulse-production-science-pack",
     icons = {
       {
         icon = "__base__/graphics/icons/production-science-pack.png",
@@ -218,7 +234,7 @@ data:extend({ -- foundry/emp/biochamber/cryo science
   },
   { -- utility science EM
     type = "recipe",
-    name = "pulse-utility-science-pack",
+    name = "oc-pulse-utility-science-pack",
     icons = {
       {
         icon = "__base__/graphics/icons/utility-science-pack.png",
@@ -255,35 +271,18 @@ data:extend({ -- foundry/emp/biochamber/cryo science
     allow_productivity = true,
   },
 })
-else
-  local alt_recipe_dict = {
-    ["automation-science-pack"] = "metallurgy",
-    ["logistic-science-pack"]  ="metallurgy",
-    ["military-science-pack"] = "metallurgy",
-    ["chemical-science-pack"] = "organic",
-    ["space-science-pack"] = "organic",
-    ["production-science-pack"] = "electromagnetics",
-    ["utility-science-pack"] = "electromagnetics",
-  }
-  -- generator_api usage
-  local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
-
-  generator_api.batch_generator(alt_recipe_dict)
 end
 
 if mods["science-tab"] then
   local mapping = {
-    ["casting-automation-science-pack"] = "automation",
-    ["casting-logistic-science-pack"] = "logistic",
-    ["casting-military-science-pack"] = "military",
-    ["lava-to-military-science-pack"] = "military",
-    ["bio-chemical-science-pack"] = "chemical",
-    ["bio-space-science-pack"] = "space",
-    ["pulse-production-science-pack"] = "production",
-    ["pulse-utility-science-pack"] = "utility",
+    ["oc-casting-automation-science-pack"] = "science-pack-alternative",
+    ["oc-casting-logistic-science-pack"] = "science-pack-alternative",
+    ["oc-casting-military-science-pack"] = "science-pack-alternative",
+    ["oc-lava-to-military-science-pack"] = "science-pack-alternative",
+    ["oc-bio-chemical-science-pack"] = "science-pack-alternative",
+    ["oc-bio-space-science-pack"] = "science-pack-alternative",
+    ["oc-pulse-production-science-pack"] = "science-pack-alternative",
+    ["oc-pulse-utility-science-pack"] = "science-pack-alternative",
   }
-  for recipe, _ in pairs(mapping) do
-    local recipe_table = data.raw.recipe[recipe]
-    recipe_table.group = "science"
-  end
+  oc_helper.change_recipes_subgroup(mapping)
 end

@@ -23,9 +23,9 @@ data:extend({
       count = 500
     },
     effects = {
-      {type = "unlock-recipe", recipe = "casting-automation-science-pack"},
-      {type = "unlock-recipe", recipe = "casting-logistic-science-pack"},
-      {type = "unlock-recipe", recipe = "casting-military-science-pack"},
+      {type = "unlock-recipe", recipe = "oc-casting-automation-science-pack"},
+      {type = "unlock-recipe", recipe = "oc-casting-logistic-science-pack"},
+      {type = "unlock-recipe", recipe = "oc-casting-military-science-pack"},
       -- {type = "unlock-recipe", recipe = "lava-to-military-science-pack"}, -- Vulcanus/old version
     },
   },
@@ -49,8 +49,8 @@ data:extend({
     count = 500
     },
     effects = {
-      {type = "unlock-recipe", recipe = "pulse-utility-science-pack"},
-      {type = "unlock-recipe", recipe = "pulse-production-science-pack"},
+      {type = "unlock-recipe", recipe = "oc-pulse-utility-science-pack"},
+      {type = "unlock-recipe", recipe = "oc-pulse-production-science-pack"},
       -- {type = "unlock-recipe", recipe = "em-electromagnetic-science-pack"}, -- already there
     },
   },
@@ -74,8 +74,8 @@ data:extend({
     count = 500
     },
     effects = {
-      {type = "unlock-recipe", recipe = "bio-chemical-science-pack"},
-      {type = "unlock-recipe", recipe = "bio-space-science-pack"},
+      {type = "unlock-recipe", recipe = "oc-bio-chemical-science-pack"},
+      {type = "unlock-recipe", recipe = "oc-bio-space-science-pack"},
       -- {type = "unlock-recipe", recipe = "biochamber-agricultural-science-pack"}, -- already there
     },
   },
@@ -103,12 +103,12 @@ data:extend({
       count = 2000
     },
     effects = { -- non but key technology
-        -- {type = "unlock-recipe", recipe = "cryo-cryogenic-science-pack"}, -- already there
-        -- {type = "unlock-recipe", recipe = "cryo-promethium-science-pack"}, -- already there
+        -- {type = "unlock-recipe", recipe = "oc-cryo-cryogenic-science-pack"}, -- already there
+        -- {type = "unlock-recipe", recipe = "oc-cryo-promethium-science-pack"}, -- already there
     },
   },
 })
-oc_helper.add_recipe_unlocks( { ["lava-to-military-science-pack"] = {"foundry-science-packs-tech"}}) -- gently adds a recipe and doesn't break if recipe is missing
+oc_helper.add_recipe_unlocks( { ["oc-lava-to-military-science-pack"] = {"foundry-science-packs-tech"}}) -- gently adds a recipe and doesn't break if recipe is missing
 
 -- Determine max level for productivity tech and creating the techs
 local max_level_setting = settings.startup["science-productivity-max-level"].value
