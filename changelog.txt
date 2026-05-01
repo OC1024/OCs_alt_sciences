@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 2026-04-27
+  Compatibility:
+    - Updated dependecy of [OCs Base Assets] to >=0.4.3, where helper functions were re-grouped and calculation errors were fixed.
+    - Updated dependency of [OCs Stone casting to >=0.8.9, which also depends on the base mod.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2026-04-13
   Major Features:

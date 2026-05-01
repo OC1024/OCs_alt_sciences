@@ -1,6 +1,6 @@
 local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
 
-if settings.startup["experimental-recipes"].value then
+if settings.startup["experimental-recipes"].value then -- generator_api created recipes
   local alt_recipe_dict = {
     ["automation-science-pack"] = "metallurgy",
     ["logistic-science-pack"]  ="metallurgy",
@@ -10,11 +10,10 @@ if settings.startup["experimental-recipes"].value then
     ["production-science-pack"] = "electromagnetics",
     ["utility-science-pack"] = "electromagnetics",
   }
-  -- generator_api usage
   local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 
   generator_api.batch_generator(alt_recipe_dict)
-else
+else -- manually created recipes
 data:extend({ -- foundry/emp/biochamber/cryo science
   { -- automation science
     type = "recipe",
