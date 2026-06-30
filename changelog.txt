@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2026-06-28-wip
+  Major Features:
+    - Updated to Factorio 2.1
+    - Broader mod compatibility with any mod modifying the science pack recipes in the data stage. Contribution by duruoqingyun. This mod now acts in the data-updates stage.
+  Compatibility:
+    - Updated dependency of [OCs Base Assets] to >=0.5.0, where helper functions were updated.
+    - Updated dependency of [OCs Stone Casting] to >=0.9.0.
+    - Made [Science Tab] a recommended mod
+  Bugfixes:
+    - Fixed that with [AAI Industry], recipes could be duplicated, aka "normal" and "aai version".
+    - Fixed incorrect cost of manual created [AAI Industry] version for "logistic science pack".
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 2026-04-27
   Compatibility:

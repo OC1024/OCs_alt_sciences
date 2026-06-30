@@ -17,7 +17,7 @@ else
   data:extend({
     { -- logistic science
       type = "recipe",
-      name = "casting-logistic-science-pack",
+      name = "oc-casting-logistic-science-pack",
       icons = {
         {
           icon = "__base__/graphics/icons/logistic-science-pack.png",
@@ -30,15 +30,16 @@ else
           icon_mipmaps = 4,
         }
       },
-      category = "metallurgy",
+      categories = {"metallurgy"},
       subgroup = "science-pack-alternative",
       enabled = false,
       energy_required = 10,
       ingredients = {
-        -- 1 inserter =
-        -- 2 transport-belt = iron-gear-wheel + motor (motor=)
-        { type = "fluid", name = "molten-iron",        amount = 60, fluidbox_multiplier = 4 }, -- 3 iron-gear-wheel, 3 iron-plate
-        { type = "item",  name = "electronic-circuit", amount = 1 },
+        -- 1 inserter =electric-motor (= 1iron-gear-wheel + 1iron-plate + 6copper-cable) + burner-inserter(=  2iron-stick * 1motor) -- 50molten-iron + 15molten-coppper
+        -- 2 transport-belt = iron-gear-wheel + motor (motor=1iron-gear-wheel + 1iron-plate) -- 30molten-iron
+        { type = "fluid", name = "molten-iron", amount = 60, fluidbox_multiplier = 4 },
+        -- { type = "fluid", name = "molten-copper", amount = 15, fluidbox_multiplier = 4 },
+        { type = "item",  name = "electric-motor", amount = 1 },
       },
       results = {
         { type = "item", name = "logistic-science-pack", amount = 2 }
@@ -47,7 +48,7 @@ else
     },
     { -- utility science EM
       type = "recipe",
-      name = "em-utility-science-pack",
+      name = "oc-pulse-utility-science-pack",
       icons = {
         {
           icon = "__base__/graphics/icons/utility-science-pack.png",
@@ -60,7 +61,7 @@ else
           icon_mipmaps = 4,
         }
       },
-      category = "electromagnetics",
+      categories = {"electromagnetics"},
       subgroup = "science-pack-alternative",
       enabled = false,
       energy_required = 35, -- only last step
@@ -71,7 +72,7 @@ else
         { type = "item",  name = "low-density-structure", amount = 3 }, -- not carftable in em-plant
         { type = "item",  name = "electronic-circuit",    amount = 3 * 20 },
         { type = "item",  name = "advanced-circuit",      amount = 3 * 2 },
-        { type = "item",  name = "flying-robot-frame",    amount = 1 },
+        { type = "item",  name = "flying-robot-frame",    amount = 1 }, -- could be decomposed but would add too many ingredients
         -- {type = "item", name = "steel-plate", amount = 1},
         -- {type = "item", name = "electric-motor", amount = 1},
         -- {type = "item", name = "battery ", amount = 2},
