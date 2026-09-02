@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 2026-09-02
+  Translation:
+    - Updated translations from Crowdin.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
-Date: 2026-06-28-wip
+Date: 2026-06-28
   Major Features:
     - Updated to Factorio 2.1
     - Broader mod compatibility with any mod modifying the science pack recipes in the data stage. Contribution by duruoqingyun. This mod now acts in the data-updates stage.
@@ -37,9 +42,9 @@ Version: 0.1.4
 Date: 2025-11-11
   Changes:
     - Added Cryogenic science pack to the prerequirements for cryoplant-science-packs-tech explicitly. It was indirectly a prerequirement before.
-  Localisation:
-    - Unify EN localisation with my other mods
-    - Added missing EN localisation for a mod setting.
+  Translation:
+    - Unify EN translation  with my other mods
+    - Added missing EN translation for a mod setting.
     - Elaborated EN, DE mod setting such that it is clearer what it does.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
