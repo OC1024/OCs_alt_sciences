@@ -144,6 +144,10 @@ else
     max_level = max_level_setting
   end
 
+  ---create techs for the progression phases and adds it to the game data
+  ---@param name string
+  ---@param prereq string
+  ---@param recipes table<string> -- list of recipes which gets a bonus
   local function create_prod_bonus_tech(name, prereq, recipes)
     -- Get icon details from the prerequisite tech
     local base_icon = data.raw["technology"][prereq].icon
@@ -204,7 +208,7 @@ else
       { "cryogenic-science-pack", "promethium-science-pack" }),
   })
 
-  -- Overwrite cryoplant tech cost with research trigger
+  -- Overwrite my cryoplant tech cost with research trigger
   local cryo_tech = data.raw.technology["cryoplant-science-packs-tech"]
   if cryo_tech then
     cryo_tech.unit = nil -- Clear old unit definition
