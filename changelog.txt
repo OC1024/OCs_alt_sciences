@@ -1,8 +1,51 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.2.0
-Date: 2025-10-03
+Version: 0.3.1
+Date: 2026-09-02
+  Translation:
+    - Updated translations from Crowdin.
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2026-06-28
   Major Features:
-    - Using the generator, recipes will be automatically changed for aai or krasto (maybe?) (experimental)
+    - Updated to Factorio 2.1
+    - Broader mod compatibility with any mod modifying the science pack recipes in the data stage. Contribution by duruoqingyun. This mod now acts in the data-updates stage.
+  Compatibility:
+    - Updated dependency of [OCs Base Assets] to >=0.5.0, where helper functions were updated.
+    - Updated dependency of [OCs Stone Casting] to >=0.9.0.
+    - Made [Science Tab] a recommended mod
+  Bugfixes:
+    - Fixed that with [AAI Industry], recipes could be duplicated, aka "normal" and "aai version".
+    - Fixed incorrect cost of manual created [AAI Industry] version for "logistic science pack".
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 2026-04-27
+  Compatibility:
+    - Updated dependecy of [OCs Base Assets] to >=0.4.3, where helper functions were re-grouped and calculation errors were fixed.
+    - Updated dependency of [OCs Stone casting to >=0.8.9, which also depends on the base mod.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2026-04-13
+  Major Features:
+    - Experimental Complete Rework of recipes. Legacy option is active on default.
+  Compatibility:
+    - [K2], [K2SO] is incompatible for now because of design choise. This mods tries to simplify/unify processes, while K2 wants to introduce more steps.
+      As alternative, I provide another mod named [OCs Nauvis Science Port], which allows the science recipes in the non-Nauvis-buldings.
+    - Basic [AAI Industry] support.
+    - Added compatibility with [Science tab].
+  Changes:
+    - Updated dependency of [OCs Base Assets] to >=0.4.0 as helper functions were updated.
+    - Set this mod properly to be a [Space Age] mod, which it was from the start.
+  Bugfixes:
+    - Lava version of military science pack is now correctly unlocked.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.4
+Date: 2025-11-11
+  Changes:
+    - Added Cryogenic science pack to the prerequirements for cryoplant-science-packs-tech explicitly. It was indirectly a prerequirement before.
+  Translation:
+    - Unify EN translation  with my other mods
+    - Added missing EN translation for a mod setting.
+    - Elaborated EN, DE mod setting such that it is clearer what it does.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 2025-07-27

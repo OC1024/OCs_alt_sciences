@@ -15,4 +15,18 @@ data:extend({
         default_value = true,
         order = "c-b"
     },
+    {
+        type = "bool-setting",
+        name = "experimental-recipes",
+        setting_type = "startup",
+        default_value = false,
+        order = "d"
+    },
+    -- {
+    --     type = "bool-setting",
+    --     name = "K2-custom-recipes",
+    --     setting_type = "startup",
+    --     default_value = true,
+    --     order = "d-b"
+    -- },
 })
