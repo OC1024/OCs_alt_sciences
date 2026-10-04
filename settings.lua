@@ -9,6 +9,16 @@ data:extend({
         order = "c-a"
     },
     {
+        type = "int-setting",
+        name = "science-productivity-bonus-per-level",
+        setting_type = "startup",
+        default_value = 5,
+        allowed_values = { 5, 10 },
+        -- minimum_value = 0,
+        -- maximum_value = 10,
+        order = "c-b"
+    },
+    {
         type = "bool-setting",
         name = "allow-planetary-sci-productivity",
         setting_type = "startup",

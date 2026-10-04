@@ -1,8 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.1
-Date: 2026-09-02
+Date: 2026-10-01
   Translation:
     - Updated translations from Crowdin.
+  Graphics:
+    - Reused Space Age graphics instead of my own graphics for the overlayer icons, reducing mod size.
+  Compatibility:
+    - Updated dependency of [OCs Base Assets] to >=0.6.0, where helper functions were updated.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2026-06-28

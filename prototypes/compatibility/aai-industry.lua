@@ -25,9 +25,11 @@ else
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-molten-iron.png",
+          icon = "__space-age__/graphics/icons/fluid/molten-iron.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       categories = {"metallurgy"},
@@ -56,9 +58,11 @@ else
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-em-plant.png",
+          icon = "__space-age__/graphics/icons/electromagnetic-plant.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       categories = {"electromagnetics"},

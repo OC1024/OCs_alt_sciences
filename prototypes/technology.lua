@@ -1,21 +1,47 @@
 local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
 local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
+local bonus = settings.startup["science-productivity-bonus-per-level"].value / 100 -- productivity bonus per level
 
 -- alternative recipes for basic science packs in foundry, em-plant and biochamber
 data:extend({
   { -- foundry sciences early-tech sciences
     type = "technology",
     name = "foundry-science-packs-tech",
-    icon = "__OCs_alt_sciences__/graphics/technology/casting-science-packs2.png",
-    icon_size = 256,
-    icon_mipmaps = 4,
+    icons = {
+      {
+        icon = "__space-age__/graphics/technology/foundry.png",
+        icon_size = 256,
+        icon_mipmaps = 4,
+      },
+      {
+        icon = "__base__/graphics/icons/automation-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+        shift = { -48, 48 },
+      },
+      {
+        icon = "__base__/graphics/icons/logistic-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+        shift = { -24, 48 },
+      },
+      {
+        icon = "__base__/graphics/icons/military-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+        shift = { 0, 48 },
+      },
+    },
     prerequisites = {
       "military-science-pack",
       "space-science-pack",
       "production-science-pack",
       "utility-science-pack",
       "metallurgic-science-pack",
-    }, --some are indirect prereqs (red, green, blue))
+    }, --some are indirect prereqs (red, green, blue)
     unit = {
       -- cast-able science packs are used twice as the rest
       ingredients = {
@@ -35,21 +61,39 @@ data:extend({
       { type = "unlock-recipe", recipe = "oc-casting-automation-science-pack" },
       { type = "unlock-recipe", recipe = "oc-casting-logistic-science-pack" },
       { type = "unlock-recipe", recipe = "oc-casting-military-science-pack" },
-      -- {type = "unlock-recipe", recipe = "lava-to-military-science-pack"}, -- Vulcanus/old version
+      -- {type = "unlock-recipe", recipe = "lava-to-military-science-pack"}, -- Vulcanus/old version added later if existent
     },
   },
   { -- em-plant sciences mid-tech sciences (pulse)
     type = "technology",
     name = "emp-science-packs-tech",
-    icon = "__OCs_alt_sciences__/graphics/technology/em-science-packs3.png",
-    icon_size = 256,
-    icon_mipmaps = 4,
+    icons = {
+      {
+        icon = "__space-age__/graphics/technology/electromagnetic-plant.png",
+        icon_size = 256,
+        icon_mipmaps = 4,
+      },
+      {
+        icon = "__base__/graphics/icons/utility-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+        shift = { -48, 48 },
+      },
+      {
+        icon = "__base__/graphics/icons/production-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+        shift = { -24, 48 },
+      },
+    },
     prerequisites = {
       "space-science-pack",
       "utility-science-pack",
       "production-science-pack",
       "electromagnetic-science-pack",
-      }, --some are indirect prereqs (red, green, blue))
+    },   --some are indirect prereqs (red, green, blue))
     unit = {
       -- em-able science packs are used twice as the rest
       ingredients = {
@@ -72,9 +116,27 @@ data:extend({
   { -- biochamber sciences early-midtech sciences (bio)
     type = "technology",
     name = "biochamber-science-packs-tech",
-    icon = "__OCs_alt_sciences__/graphics/technology/biochamber-science-packs.png",
-    icon_size = 256,
-    icon_mipmaps = 4,
+    icons = {
+      {
+        icon = "__space-age__/graphics/technology/biochamber.png",
+        icon_size = 256,
+        icon_mipmaps = 4,
+      },
+      {
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+        shift = { -48, 48 },
+      },
+      {
+        icon = "__base__/graphics/icons/space-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+        shift = { -24, 48 },
+      },
+    },
     prerequisites = { "agricultural-science-pack", "space-science-pack", "chemical-science-pack", }, --some are indirect prereqs (biochamber))
     unit = {
       -- biochamber-able science packs are used twice as the rest
@@ -99,9 +161,27 @@ data:extend({
   { -- cryogenic-plant sciences late-game sciences
     type = "technology",
     name = "cryoplant-science-packs-tech",
-    icon = "__OCs_alt_sciences__/graphics/technology/cryo-science-packs2.png",
-    icon_size = 256,
-    icon_mipmaps = 4,
+    icons = {
+      {
+        icon = "__space-age__/graphics/technology/cryogenic-plant.png",
+        icon_size = 256,
+        icon_mipmaps = 4,
+      },
+      {
+        icon = "__space-age__/graphics/icons/cryogenic-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+        shift = { -48, 48 },
+      },
+      {
+        icon = "__space-age__/graphics/icons/promethium-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        scale = 0.5,
+        shift = { -24, 48 },
+      },
+    },
     prerequisites = { "emp-science-packs-tech", "foundry-science-packs-tech", "biochamber-science-packs-tech", "cryogenic-science-pack", "promethium-science-pack" },
     unit = {
       -- cryo-able science packs are used twice as the rest
@@ -136,86 +216,89 @@ oc_tech.add_recipe_unlocks(unlock_mapping)
 local max_level_setting = settings.startup["science-productivity-max-level"].value
 if max_level_setting == 0 then
   return -- Skip defining the prod-bonus-tech entirely
-else
-  local max_level
-  if max_level_setting == -1 then
-    max_level = "infinite"
-  else
-    max_level = max_level_setting
-  end
+end
+-- basically else
 
-  ---create techs for the progression phases and adds it to the game data
-  ---@param name string
-  ---@param prereq string
-  ---@param recipes table<string> -- list of recipes which gets a bonus
-  local function create_prod_bonus_tech(name, prereq, recipes)
-    -- Get icon details from the prerequisite tech
-    local base_icon = data.raw["technology"][prereq].icon
+local max_level = max_level_setting == -1 and "infinite" or max_level_setting
+local allow_planetary_prod = settings.startup["allow-planetary-sci-productivity"].value
 
-    -- Collect all recipes from the prerequisite tech and add additional recipes
-    local productivity_effects = {}
+--- Create techs for the progression phases and adds it to the game data
+--- @param name string
+--- @param prereq string prerequisite technology name
+--- @param recipes table<string> list of recipes which gets a bonus
+local function create_prod_bonus_tech(name, prereq, recipes)
+  local prereq_tech = data.raw.technology[prereq]
+  local tech_icons = table.deepcopy(prereq_tech.icons)
+  local productivity_effects = {}
 
-    -- Function to add a productivity effect for a recipe
-    local function add_productivity_effect(recipe)
-      table.insert(productivity_effects, {
-        type = "change-recipe-productivity",
-        recipe = recipe,
-        change = 0.05, -- +5% productivity per level
-        effect_description = { "technology-description." .. name }
-      })
-    end
-
-    -- Process all recipes unlocked by the prerequisite tech
-    for _, effect in pairs(data.raw["technology"][prereq].effects) do
-      if effect.type == "unlock-recipe" and effect.recipe then
-        add_productivity_effect(effect.recipe)
-      end
-    end
-
-    local allow_planetary_prod = settings.startup["allow-planetary-sci-productivity"].value
-    if allow_planetary_prod then
-      for _, recipe in pairs(recipes) do
-        add_productivity_effect(recipe)
-      end
-    end
-
-    return {
-      type = "technology",
-      name = name,
-      icons = util.technology_icon_constant_recipe_productivity(base_icon), --reusing the vanilla prod icon as overlayer
-      prerequisites = { prereq },
-      effects = productivity_effects,
-      unit = {
-        ingredients = data.raw["technology"][prereq].unit.ingredients,
-        count_formula = "1000*2^(L/2)", -- Exponential scaling
-        time = data.raw["technology"][prereq].unit.time
-      },
-      upgrade = true,
-      max_level = max_level,
-      -- order = "z-" .. name
-    }
-  end
-
-  -- Create separate techs for the alternative recipes
-  data:extend({
-    create_prod_bonus_tech("foundry-science-packs-productivity-tech", "foundry-science-packs-tech",
-      { "metallurgic-science-pack" }),
-    create_prod_bonus_tech("emp-science-packs-productivity-tech", "emp-science-packs-tech",
-      { "electromagnetic-science-pack" }),
-    create_prod_bonus_tech("biochamber-science-packs-productivity-tech", "biochamber-science-packs-tech",
-      { "agricultural-science-pack" }),
-    create_prod_bonus_tech("cryoplant-science-packs-productivity-tech", "cryoplant-science-packs-tech",
-      { "cryogenic-science-pack", "promethium-science-pack" }),
+  -- Add the recipe-productivity icon overlay.
+  table.insert(tech_icons, {
+    icon = "__core__/graphics/icons/technology/constants/constant-recipe-productivity.png",
+    icon_size = 128,
+    scale = 0.5,
+    shift = { 48, 48 },
   })
 
-  -- Overwrite my cryoplant tech cost with research trigger
-  local cryo_tech = data.raw.technology["cryoplant-science-packs-tech"]
-  if cryo_tech then
-    cryo_tech.unit = nil -- Clear old unit definition
-    cryo_tech.research_trigger = {
-      type = "craft-item",
-      item = "promethium-science-pack",
-      count = 10,
-    }
+  --- Add a productivity effect for a recipe
+  --- @param recipe string recipe name
+  local function add_productivity_effect(recipe)
+    table.insert(productivity_effects, {
+      type = "change-recipe-productivity",
+      recipe = recipe,
+      change = bonus,
+      effect_description = { "technology-description." .. name }
+    })
   end
+
+  -- Process all recipes unlocked by the prerequisite tech
+  for _, effect in pairs(prereq_tech.effects or {}) do
+    if effect.type == "unlock-recipe" and effect.recipe then
+      add_productivity_effect(effect.recipe)
+    end
+  end
+
+  if allow_planetary_prod then
+    for _, recipe in pairs(recipes) do
+      add_productivity_effect(recipe)
+    end
+  end
+
+  return {
+    type = "technology",
+    name = name,
+    icons = tech_icons,
+    prerequisites = { prereq },
+    effects = productivity_effects,
+    unit = {
+      ingredients = table.deepcopy(prereq_tech.unit.ingredients),
+      count_formula = "1000*2^(L/2)",   -- Exponential scaling
+      time = prereq_tech.unit.time
+    },
+    upgrade = true,
+    max_level = max_level,
+    -- order = "z-" .. name
+  }
+end
+
+-- Create separate techs for the alternative recipes
+data:extend({
+  create_prod_bonus_tech("foundry-science-packs-productivity-tech", "foundry-science-packs-tech",
+    { "metallurgic-science-pack" }),
+  create_prod_bonus_tech("emp-science-packs-productivity-tech", "emp-science-packs-tech",
+    { "electromagnetic-science-pack" }),
+  create_prod_bonus_tech("biochamber-science-packs-productivity-tech", "biochamber-science-packs-tech",
+    { "agricultural-science-pack" }),
+  create_prod_bonus_tech("cryoplant-science-packs-productivity-tech", "cryoplant-science-packs-tech",
+    { "cryogenic-science-pack", "promethium-science-pack" }),
+})
+
+-- Overwrite my cryoplant tech cost with research trigger
+local cryo_tech = data.raw.technology["cryoplant-science-packs-tech"]
+if cryo_tech then
+  cryo_tech.unit = nil   -- Clear old unit definition
+  cryo_tech.research_trigger = {
+    type = "craft-item",
+    item = "promethium-science-pack",
+    count = 10,
+  }
 end

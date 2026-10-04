@@ -17,9 +17,11 @@ if settings.startup["K2-custom-recipes"].value then
           draw_as_light = true,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-molten-iron.png",
+          icon = "__space-age__/graphics/icons/fluid/molten-iron.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       category = "metallurgy",
@@ -53,10 +55,19 @@ if settings.startup["K2-custom-recipes"].value then
           draw_as_light = true,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-molten-iron.png",
+          icon = "__space-age__/graphics/icons/fluid/molten-iron.png",
           icon_size = 64,
           icon_mipmaps = 4,
-        }
+          scale = 0.25,
+          shift = { 8, -8 },
+        },
+        {
+          icon = "__space-age__/graphics/icons/fluid/molten-copper.png",
+          icon_size = 64,
+          icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 0, -8 },
+        },
       },
       category = "metallurgy",
       subgroup = "science-pack-alternative",
@@ -85,15 +96,17 @@ if settings.startup["K2-custom-recipes"].value then
           scale = 0.5,
         },
         {
-          filename = "__Krastorio2Assets__/icons/cards/automation-tech-card-light.png",
+          filename = "__Krastorio2Assets__/icons/cards/military-tech-card-light.png",-- double-check
           size = 64,
           scale = 0.5,
           draw_as_light = true,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-molten-iron.png",
+          icon = "__space-age__/graphics/icons/fluid/molten-iron.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       category = "metallurgy",
@@ -133,9 +146,11 @@ if settings.startup["K2-custom-recipes"].value then
           draw_as_light = true,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-em-plant.png",
+          icon = "__space-age__/graphics/icons/electromagnetic-plant.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       category = "electromagnetics",

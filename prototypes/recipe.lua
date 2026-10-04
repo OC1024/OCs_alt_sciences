@@ -25,9 +25,11 @@ else -- manually created recipes
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-molten-iron.png",
+          icon = "__space-age__/graphics/icons/fluid/molten-iron.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       categories = { "metallurgy" },
@@ -53,9 +55,11 @@ else -- manually created recipes
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-molten-iron.png",
+          icon = "__space-age__/graphics/icons/fluid/molten-iron.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       categories = { "metallurgy" },
@@ -81,10 +85,19 @@ else -- manually created recipes
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-molten-iron.png",
+          icon = "__space-age__/graphics/icons/fluid/molten-copper.png",
           icon_size = 64,
           icon_mipmaps = 4,
-        }
+          scale = 0.25,
+          shift = { 0, -8 },
+        },
+        {
+          icon = "__space-age__/graphics/icons/fluid/molten-iron.png",
+          icon_size = 64,
+          icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
+        },
       },
       categories = { "metallurgy" },
       subgroup = "science-pack-alternative",
@@ -113,9 +126,11 @@ else -- manually created recipes
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-lava-droplet.png",
+          icon = "__space-age__/graphics/icons/fluid/lava.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { -4, -8 },
         }
       },
       categories = { "metallurgy" },
@@ -142,9 +157,11 @@ else -- manually created recipes
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-biochamber.png",
+          icon = "__space-age__/graphics/icons/biochamber.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       categories = { "organic" },
@@ -171,9 +188,11 @@ else -- manually created recipes
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-biochamber.png",
+          icon = "__space-age__/graphics/icons/biochamber.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       categories = { "organic" }, -- submod "OCs_ammo_casting" has optionally space-fish-breeding so there's a positive feedback loop if bioflux recipe is not enough
@@ -207,9 +226,11 @@ else -- manually created recipes
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-em-plant.png",
+          icon = "__space-age__/graphics/icons/electromagnetic-plant.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       categories = { "electromagnetics" },
@@ -241,9 +262,11 @@ else -- manually created recipes
           icon_mipmaps = 4,
         },
         {
-          icon = "__OCs_base_assets__/graphics/icons/overlayer-recipe-em-plant.png",
+          icon = "__space-age__/graphics/icons/electromagnetic-plant.png",
           icon_size = 64,
           icon_mipmaps = 4,
+          scale = 0.25,
+          shift = { 8, -8 },
         }
       },
       categories = { "electromagnetics" },
@@ -259,10 +282,10 @@ else -- manually created recipes
         { type = "item",  name = "advanced-circuit",      amount = 2 * 2 },
         { type = "item",  name = "flying-robot-frame",    amount = 1 },
         -- {type = "item", name = "steel-plate", amount = 1},
-        -- {type = "item", name = "electric-motor", amount = 1},
+        -- {type = "item", name = "electric-engine-unit", amount = 1},
         -- {type = "item", name = "battery ", amount = 2},
         { type = "fluid", name = "sulfuric-acid",         amount = 2 * 5 }, --  2*10processing-unit
-        -- {type = "fluid", name = "lubricant", amount = 15}, -- 15*1e-motor
+        -- {type = "fluid", name = "lubricant", amount = 15}, -- 15*1electric-engine-unit
       },
       results = {
         { type = "item", name = "utility-science-pack", amount = 3 }
