@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.1
 Date: 2026-10-01
+  Changes:
+    - Added user setting for "easy mode" which increases tech exponent, but sets the bonus to 10% (Default: 5% bonus and square root of 2 cost increase).
   Translation:
     - Updated translations from Crowdin.
   Graphics:

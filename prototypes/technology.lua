@@ -1,6 +1,15 @@
 local oc_helper = require("__OCs_base_assets__.prototypes.utils.helper")
 local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
-local bonus = settings.startup["science-productivity-bonus-per-level"].value / 100 -- productivity bonus per level
+
+local bonus
+local power_factor
+if settings.startup["alt-sci-easy-mode"].value then
+  bonus =  0.10 -- productivity bonus per level
+  power_factor = 1
+else
+  bonus = 0.05
+  power_factor = 0.5
+end
 
 -- alternative recipes for basic science packs in foundry, em-plant and biochamber
 data:extend({
@@ -271,7 +280,7 @@ local function create_prod_bonus_tech(name, prereq, recipes)
     effects = productivity_effects,
     unit = {
       ingredients = table.deepcopy(prereq_tech.unit.ingredients),
-      count_formula = "1000*2^(L/2)",   -- Exponential scaling
+      count_formula = "1000*2^(L*"..power_factor..")",   -- Exponential scaling
       time = prereq_tech.unit.time
     },
     upgrade = true,

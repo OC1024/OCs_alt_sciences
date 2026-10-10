@@ -9,13 +9,10 @@ data:extend({
         order = "c-a"
     },
     {
-        type = "int-setting",
-        name = "science-productivity-bonus-per-level",
+        type = "bool-setting",
+        name = "alt-sci-easy-mode",
         setting_type = "startup",
-        default_value = 5,
-        allowed_values = { 5, 10 },
-        -- minimum_value = 0,
-        -- maximum_value = 10,
+        default_value = false,
         order = "c-b"
     },
     {
