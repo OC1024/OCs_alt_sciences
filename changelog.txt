@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.2
+Date: 2026-10-14
+  Compatibility:
+    - Updated dependency of [OCs Base Assets]
+    - Removed technical dependency of [OCs Stone Casting], but it is still compatible (and useful).
+  Changes:
+    - Casting millitary science from lava now requires [OCs Stone Casting], otherwise it is disabled.
+    - For experimental recipes, casting military science ingredient molten copper is replaced by more lava, and 1 calcite was added.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.1
 Date: 2026-10-12
   Changes:

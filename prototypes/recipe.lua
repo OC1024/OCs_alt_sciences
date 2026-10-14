@@ -104,46 +104,13 @@ else -- manually created recipes
       enabled = false,
       energy_required = 10,
       ingredients = {
-        { type = "fluid", name = "molten-iron",   amount = 120, fluidbox_multiplier = 4 }, -- 30*1steel, 10*9iron-plate
+        { type = "fluid", name = "molten-iron",   amount = 120, fluidbox_multiplier = 4 }, -- 30*1steel + 10*9iron-plate
         { type = "fluid", name = "molten-copper", amount = 100, fluidbox_multiplier = 4 }, -- 10*1copper-plate
-        -- {type = "fluid", name = "lava", amount = 660, fluidbox_multiplier = 2}, -- 30*1steel, 10*9iron-plate, 10*1copper-plate, 10*5*2stone = 330 lava. volume x2
         { type = "item",  name = "coal",          amount = 10 },                           -- 10coal
-        -- {type = "item", name = "calcite", amount = 1}, -- make it so it resemble around 500 lava per calcite
         { type = "item",  name = "stone-brick",   amount = 10 },                           -- 20stone=10stone-brick=2wall
       },
       results = {
         { type = "item", name = "military-science-pack", amount = 2 }
-      },
-      allow_productivity = true,
-    },
-    { -- military science (Vulcanus/lava version)
-      type = "recipe",
-      name = "oc-lava-to-military-science-pack",
-      icons = {
-        {
-          icon = "__base__/graphics/icons/military-science-pack.png",
-          icon_size = 64,
-          icon_mipmaps = 4,
-        },
-        {
-          icon = "__space-age__/graphics/icons/fluid/lava.png",
-          icon_size = 64,
-          icon_mipmaps = 4,
-          scale = 0.25,
-          shift = { -4, -8 },
-        }
-      },
-      categories = { "metallurgy" },
-      subgroup = "science-pack-alternative",
-      enabled = false,
-      energy_required = 20,                                                          -- volume x2
-      ingredients = {
-        { type = "fluid", name = "lava",    amount = 660, fluidbox_multiplier = 2 }, -- 30*1steel, 10*9iron-plate, 10*1copper-plate, 10*20*stone = 330 lava. volume x2
-        { type = "item",  name = "coal",    amount = 20 },                           -- 10coal volume x2
-        { type = "item",  name = "calcite", amount = 1 },                            -- make it so it resemble around 500 lava per calcite
-      },
-      results = {
-        { type = "item", name = "military-science-pack", amount = 4 }
       },
       allow_productivity = true,
     },
@@ -195,7 +162,8 @@ else -- manually created recipes
           shift = { 8, -8 },
         }
       },
-      categories = { "organic" }, -- submod "OCs_ammo_casting" has optionally space-fish-breeding so there's a positive feedback loop if bioflux recipe is not enough
+      -- submod "OCs_ammo_casting" has optionally space-fish-breeding so there's a positive feedback loop if bioflux recipe is not enough
+      categories = { "organic" },
       subgroup = "science-pack-alternative",
       enabled = false,
       energy_required = 15,
@@ -293,18 +261,4 @@ else -- manually created recipes
       allow_productivity = true,
     },
   })
-end
-
-if mods["science-tab"] then
-  local mapping = {
-    ["oc-casting-automation-science-pack"] = "science-pack-alternative",
-    ["oc-casting-logistic-science-pack"]   = "science-pack-alternative",
-    ["oc-casting-military-science-pack"]   = "science-pack-alternative",
-    ["oc-lava-to-military-science-pack"]   = "science-pack-alternative",
-    ["oc-bio-chemical-science-pack"]       = "science-pack-alternative",
-    ["oc-bio-space-science-pack"]          = "science-pack-alternative",
-    ["oc-pulse-production-science-pack"]   = "science-pack-alternative",
-    ["oc-pulse-utility-science-pack"]      = "science-pack-alternative",
-  }
-  oc_recipe.change_recipes_subgroup(mapping)
 end

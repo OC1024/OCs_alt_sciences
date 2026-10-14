@@ -5,3 +5,6 @@ end
 --     require("__OCs_base_assets__.prototypes.compatibility.Krastorio2")
 --     require("prototypes.compatibility.Krastorio2")
 -- end
+if mods["OCs_stone_casting"] then
+    require("prototypes.compatibility.OCs_stone_casting")
+end
