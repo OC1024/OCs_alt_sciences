@@ -21,6 +21,12 @@ if settings.startup["experimental-recipes"].value then
 
   -- unlock new recipe with the same tech
   oc_tech.add_tech_unlocks({ ["foundry-science-packs-tech"] = { r_metal.name, r_lava.name } })
+  -- Add crafting productivity bonus to all levels of the productivity technology
+  for tech_name, _ in pairs(data.raw.technology) do
+    if string.match(tech_name, "^foundry%-science%-packs%-productivity%-tech%-?%d*$") then
+      oc_tech.add_productivity_bonus(tech_name, r_lava.name, 0.1)
+    end
+  end
 
   -- allow productivity modules
   oc_recipe.allow_productivity({ r_metal.name, r_lava.name })
@@ -60,4 +66,10 @@ else  -- manually created recipes
   })
   -- unlock new recipe with the same tech
   oc_tech.add_tech_unlocks({ ["foundry-science-packs-tech"] = "oc-lava-to-military-science-pack" })
+  -- Add crafting productivity bonus to all levels of the productivity technology
+  for tech_name, _ in pairs(data.raw.technology) do
+    if string.match(tech_name, "^foundry%-science%-packs%-productivity%-tech%-?%d*$") then
+      oc_tech.add_productivity_bonus(tech_name, "oc-lava-to-military-science-pack", 0.1)
+    end
+  end
 end

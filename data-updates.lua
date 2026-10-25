@@ -1,10 +1,10 @@
 if mods["aai-industry"] then
-    require("prototypes.compatibility.aai-industry")
+  require("prototypes.compatibility.aai-industry")
 end
 -- if mods["Krastorio2-spaced-out"] then -- replaces normal Krastorio2 with space-age compatible version
---     require("__OCs_base_assets__.prototypes.compatibility.Krastorio2")
---     require("prototypes.compatibility.Krastorio2")
+--   require("__OCs_base_assets__.prototypes.compatibility.Krastorio2")
+--   require("prototypes.compatibility.Krastorio2")
 -- end
 if mods["OCs_stone_casting"] then
-    require("prototypes.compatibility.OCs_stone_casting")
+  require("prototypes.compatibility.OCs_stone_casting")
 end

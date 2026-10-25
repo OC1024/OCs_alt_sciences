@@ -1,6 +1,6 @@
 {
   "name": "OCs_alt_sciences",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "title": "OCs Alternative Science Production",
   "author": "OC1024",
   "space_travel_required": true,
@@ -9,7 +9,7 @@
   "dependencies": [
     "base >= 2.1.7",
     "space-age",
-    "OCs_base_assets >= 0.6.2",
+    "OCs_base_assets >= 0.6.4",
     "+ science-tab",
     "! Krastorio2-spaced-out",
     "! Krastorio2"

@@ -4,7 +4,7 @@ local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 local bonus
 local power_factor
 if settings.startup["alt-sci-easy-mode"].value then
-  bonus =  0.10 -- productivity bonus per level
+  bonus = 0.10 -- productivity bonus per level
   power_factor = 1
 else
   bonus = 0.05
@@ -70,7 +70,7 @@ data:extend({
       { type = "unlock-recipe", recipe = "oc-casting-automation-science-pack" },
       { type = "unlock-recipe", recipe = "oc-casting-logistic-science-pack" },
       { type = "unlock-recipe", recipe = "oc-casting-military-science-pack" },
-      -- {type = "unlock-recipe", recipe = "lava-to-military-science-pack"}, -- Vulcanus/old version added later if existent
+      -- {type = "unlock-recipe", recipe = "oc-lava-to-military-science-pack"}, -- Vulcanus/old version added later if existent
     },
   },
   { -- em-plant sciences mid-tech sciences (pulse)
@@ -102,7 +102,7 @@ data:extend({
       "utility-science-pack",
       "production-science-pack",
       "electromagnetic-science-pack",
-    },   --some are indirect prereqs (red, green, blue))
+    }, --some are indirect prereqs (red, green, blue))
     unit = {
       -- em-able science packs are used twice as the rest
       ingredients = {
@@ -245,7 +245,7 @@ local function create_prod_bonus_tech(name, prereq, recipes)
     icon = "__core__/graphics/icons/technology/constants/constant-recipe-productivity.png",
     icon_size = 128,
     scale = 0.5,
-    shift = { 48, 48 },
+    shift = { 32, 32 },
   })
 
   --- Add a productivity effect for a recipe
@@ -280,7 +280,7 @@ local function create_prod_bonus_tech(name, prereq, recipes)
     effects = productivity_effects,
     unit = {
       ingredients = table.deepcopy(prereq_tech.unit.ingredients),
-      count_formula = "1000*2^(L*"..power_factor..")",   -- Exponential scaling
+      count_formula = "1000*2^(L*" .. power_factor .. ")", -- Exponential scaling
       time = prereq_tech.unit.time
     },
     upgrade = true,
@@ -304,7 +304,7 @@ data:extend({
 -- Overwrite my cryoplant tech cost with research trigger
 local cryo_tech = data.raw.technology["cryoplant-science-packs-tech"]
 if cryo_tech then
-  cryo_tech.unit = nil   -- Clear old unit definition
+  cryo_tech.unit = nil -- Clear old unit definition
   cryo_tech.research_trigger = {
     type = "craft-item",
     item = "promethium-science-pack",
