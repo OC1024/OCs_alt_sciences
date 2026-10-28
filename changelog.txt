@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.4
+Date: 2026-10-27
+  Other:
+    - Added nil check for space fish recipe unhiding.
+  Bugfixes:
+    - military science packs from lava did always get 10% bonus instead of just 5% in normal mode.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.3
 Date: 2026-10-25
   Graphics:

@@ -2,7 +2,9 @@ local oc_recipe = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
 local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 
 -- space fish for bio rockets in space
-data.raw.recipe["space-fish-breeding"].hidden = false
+if settings.startup["space-fish"] and settings.startup["space-fish"].value then
+  data.raw.recipe["space-fish-breeding"].hidden = false
+end
 
 if settings.startup["experimental-recipes"].value then -- generator_api created recipes
   local alt_recipe_dict = {

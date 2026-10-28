@@ -2,6 +2,8 @@ local generator_api = require("__OCs_base_assets__.prototypes.utils.api")
 local oc_recipe = require("__OCs_base_assets__.prototypes.utils.oc_recipe")
 local oc_tech = require("__OCs_base_assets__.prototypes.utils.oc_tech")
 
+local bonus = 0.1 and settings.startup["alt-sci-easy-mode"].value or 0.05
+
 if settings.startup["experimental-recipes"].value then
   -- copy metal based version
   local r_metal = table.deepcopy(data.raw.recipe["oc-casting-military-science-pack"])
@@ -24,7 +26,7 @@ if settings.startup["experimental-recipes"].value then
   -- Add crafting productivity bonus to all levels of the productivity technology
   for tech_name, _ in pairs(data.raw.technology) do
     if string.match(tech_name, "^foundry%-science%-packs%-productivity%-tech%-?%d*$") then
-      oc_tech.add_productivity_bonus(tech_name, r_lava.name, 0.1)
+      oc_tech.add_productivity_bonus(tech_name, r_lava.name, bonus)
     end
   end
 
@@ -69,7 +71,7 @@ else  -- manually created recipes
   -- Add crafting productivity bonus to all levels of the productivity technology
   for tech_name, _ in pairs(data.raw.technology) do
     if string.match(tech_name, "^foundry%-science%-packs%-productivity%-tech%-?%d*$") then
-      oc_tech.add_productivity_bonus(tech_name, "oc-lava-to-military-science-pack", 0.1)
+      oc_tech.add_productivity_bonus(tech_name, "oc-lava-to-military-science-pack", bonus)
     end
   end
 end
